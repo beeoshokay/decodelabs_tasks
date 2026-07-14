@@ -1,7 +1,7 @@
-# Project 1: Data Cleaning & Preparation
-### DecodeLabs Industrial Training Kit — 2026 Batch
+Project 1: Data Cleaning & Preparation
+DecodeLabs Industrial Training Kit — 2026 Batch
 
-## Overview
+Overview
 
 This project is the foundation phase of the DecodeLabs Data Analytics internship track. The objective was not to build charts or models, but to take a raw dataset and prove it is reliable, consistent, and free of structural errors before any analysis is built on top of it.
 
@@ -74,5 +74,3 @@ Findings
 | TotalPrice calculation mismatches | 0 found — TotalPrice consistently equals UnitPrice × Quantity |
 
 Conclusion: Aside from the CouponCode gap, the dataset was already structurally sound. The cleaning process focused on confirming this rigorously, through repeatable, auditable formulas, rather than assuming cleanliness at a glance.
-
-*Submitted as Project 1 of the DecodeLabs Industrial Training Kit, Data Analytics Track — 2026 Batch.*
