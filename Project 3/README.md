@@ -76,5 +76,5 @@ SQL doesn't run in the order you *type* it. You write `SELECT → FROM → WHERE
 
 ## 8. Conclusion
 
-This project was about proving data can go from a raw table to a specific, defensible answer using SQL by filtering, grouping, aggregating, and catching mistakes along the way. The data didn't reveal one product or being the main character, and that was worth finding out.
+This project was about proving data can go from a raw table to a specific, defensible answer using SQL by filtering, grouping, aggregating, and catching mistakes along the way. The data didn't reveal one product being the main character, and that was worth finding out.
 
