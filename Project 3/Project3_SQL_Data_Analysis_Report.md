@@ -21,7 +21,7 @@ Use SQL SELECT, WHERE, GROUP BY, HAVING, ORDER BY and aggregate functions (COUNT
 SELECT TOP 10 * FROM Dataset_for_Data_Analytics;
 ```
 
-![Query 1 result](screenshots/query1.png)
+![Query 1 result](query1.png)
 
 **Insight:** A first look at all 14 columns confirms the dataset is clean and ready to query, no obvious formatting issues across OrderID, Date, CustomerID, and the rest, aside from the odd expected NULL in CouponCode for orders that didn't use one.
 
@@ -33,7 +33,7 @@ SELECT OrderID, Product, TotalPrice, OrderStatus
 FROM Dataset_for_Data_Analytics;
 ```
 
-![Query 2 result](screenshots/query2.png)
+![Query 2 result](query2.png)
 
 **Insight:** Narrowing to just the columns needed for order-level analysis (Product, TotalPrice, OrderStatus) across all 1,200 rows sets up a cleaner base for the filtering and aggregation queries that follow.
 
@@ -46,7 +46,7 @@ FROM Dataset_for_Data_Analytics
 WHERE ReferralSource = 'Instagram';
 ```
 
-![Query 3 result](screenshots/query3.png)
+![Query 3 result](query3.png)
 
 **Insight:** Instagram is the single largest referral channel by volume: 259 of 1,200 orders (about 22%) came through it.
 
@@ -59,7 +59,7 @@ FROM Dataset_for_Data_Analytics
 WHERE TotalPrice >= 2000;
 ```
 
-![Query 4 result](screenshots/query4.png)
+![Query 4 result](query4.png)
 
 **Insight:** 180 orders (15% of all orders) are high-value at $2,000+ each, a natural segment to flag for a VIP/high-value customer group.
 
@@ -72,7 +72,7 @@ FROM Dataset_for_Data_Analytics
 WHERE TrackingNumber LIKE 'TRK9%';
 ```
 
-![Query 5 result](screenshots/query5.png)
+![Query 5 result](query5.png)
 
 **Insight:** The LIKE operator with a wildcard correctly isolates the 143 tracking numbers that start with 'TRK9', confirming pattern matching works as expected on this column.
 
@@ -86,7 +86,7 @@ GROUP BY Product
 ORDER BY OrderCount DESC;
 ```
 
-![Query 6 result](screenshots/query6.png)
+![Query 6 result](query6.png)
 
 **Insight:** Order volume is fairly even across the catalog: Printer leads with 181 orders, Phone trails with 156, only a 25-order spread top to bottom.
 
@@ -100,7 +100,7 @@ GROUP BY Product
 ORDER BY TotalRevenue DESC;
 ```
 
-![Query 7 result](screenshots/query7.png)
+![Query 7 result](query7.png)
 
 **Insight:** Chair earns the most total revenue ($195,620) despite Printer having more orders, meaning Chairs average order value is higher.
 
@@ -114,7 +114,7 @@ GROUP BY PaymentMethod
 ORDER BY AvgOrderValue DESC;
 ```
 
-![Query 8 result](screenshots/query8.png)
+![Query 8 result](query8.png)
 
 **Insight:** Credit Card customers spend the most per order on average ($1,127.55), about $126 more than Debit Card customers, the lowest at $1,001.56.
 
@@ -128,7 +128,7 @@ GROUP BY ReferralSource, OrderStatus
 ORDER BY ReferralSource, Orders DESC;
 ```
 
-![Query 9 result](screenshots/query9.png)
+![Query 9 result](query9.png)
 
 **Insight:** Breaking volume down by both channel and status shows each source has a broadly similar spread of outcomes e.g. Email is almost split evenly between Delivered (60) and Cancelled (59).
 
@@ -143,7 +143,7 @@ HAVING SUM(TotalPrice) > 180000
 ORDER BY TotalRevenue DESC;
 ```
 
-![Query 10 result](screenshots/query10.png)
+![Query 10 result](query10.png)
 
 **Insight:** Only four products clear the $180,000 revenue mark. Chair, Printer, Laptop, and Tablet; a shortlist of 'top performers' for reporting.
 
@@ -163,7 +163,7 @@ HAVING SUM(TotalPrice) > 65000
 ORDER BY TotalRevenue DESC;
 ```
 
-![Query 11 result](screenshots/query11.png)
+![Query 11 result](query11.png)
 
 **Insight:** Even when the analysis is narrowed to only completed deliveries (excluding cancelled/returned orders), Printer stays the top performer by revenue.  A more reliable signal
 
@@ -180,7 +180,7 @@ GROUP BY Product
 ORDER BY PercentOfTotal DESC;
 ```
 
-![Query 12 result](screenshots/query12.png)
+![Query 12 result](query12.png)
 
 **Insight:** No single product dominates revenue. The top three (Chair, Printer, Laptop) combine for under 46% of total revenue, showing the business isn't overexposed to one product.
 
@@ -191,3 +191,4 @@ ORDER BY PercentOfTotal DESC;
 - Instagram drives the most referral traffic, but order-status outcomes (Delivered/Cancelled/Returned) are similar across all channels. The traffic source doesn't appear to affect fulfillment success.
 - Revenue is well-diversified across the catalog: no product accounts for more than 15.5% of total revenue.
 - Filtering to only completed (Delivered/Shipped) orders confirms Printer, Laptop, and Chair remain the strongest performers even after removing cancelled/returned noise.
+- 
